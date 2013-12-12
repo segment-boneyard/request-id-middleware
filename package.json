@@ -1,8 +1,11 @@
 {
   "name": "s-request-id-middleware",
-  "private": true,
   "dependencies": {
     "node-uuid": "~1.4.1",
     "defaults": "~1.0.0"
+  },
+  "version": "1.0.0",
+  "publishConfig": {
+    "registry": "https://registry.segment.io"
   }
 }
