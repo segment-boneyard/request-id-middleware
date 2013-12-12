@@ -1,5 +1,5 @@
 {
-  "name": "request-id-middleware",
+  "name": "s-request-id-middleware",
   "private": true,
   "dependencies": {
     "node-uuid": "~1.4.1",
