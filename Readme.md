@@ -1,14 +1,14 @@
 
 # request-id-middleware
 
-  Middleware for adding a unique `requestId` to each request.
+  Add a unique `requestId` uuid to each [express](https://github.com/visionmedia/express) request for logging.
 
 ## Example
 
 ```js
-var id = require('request-id-middleware')();
+var requestId = require('request-id-middleware')();
 
-app.get('/', id, function (req, res, next) {
+app.get('/', requestId, function (req, res, next) {
   res.set({ 'X-Request-Id', req._id });
   res.send(200);
 });
@@ -18,7 +18,7 @@ app.get('/', id, function (req, res, next) {
 
 ### requestId(options)
   
-  Generate your own `requestId` middleware function with custom `options`:
+  Generate a request id middleware with `options` defaulting to:
 
 ```js
 {
@@ -27,3 +27,19 @@ app.get('/', id, function (req, res, next) {
   "key": '_id' // set the request id as `req._id`
 }
 ```
+
+## License
+
+```
+WWWWWW||WWWWWW
+ W W W||W W W
+      ||
+    ( OO )__________
+     /  |           \
+    /o o|    MIT     \
+    \___/||_||__||_|| *
+         || ||  || ||
+        _||_|| _||_||
+       (__|__|(__|__|
+```
+

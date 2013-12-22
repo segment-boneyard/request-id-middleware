@@ -2,13 +2,11 @@
 var defaults = require('defaults');
 var uuid = require('node-uuid');
 
-
 /**
  * Expose `generate`.
  */
 
 module.exports = generate;
-
 
 /**
  * Generate a requestId middleware.
