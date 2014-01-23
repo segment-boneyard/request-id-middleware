@@ -1,7 +1,8 @@
-
 # request-id-middleware
 
   Add a unique `requestId` uuid to each [express](https://github.com/visionmedia/express) request for logging.
+
+  [Koa version](https://github.com/segmentio/koa-request-id).
 
 ## Example
 
