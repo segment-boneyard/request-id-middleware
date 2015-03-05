@@ -35,7 +35,7 @@ Formats:
 - 'v1' is a time based uuid format
 - 'v4' is a random uuid format
 - 'numeric' is a number that increasing every request
-- 'stripe' is Stripe objects format like 'req_'
+- 'stripe' is Stripe objects format like 'req_2cef88e8622a00'
 
 
 ## License
