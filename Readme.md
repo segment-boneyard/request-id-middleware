@@ -23,11 +23,20 @@ app.get('/', requestId, function (req, res, next) {
 
 ```js
 {
-  "header": 'request-id' // read header `request-id`
+  "header": 'request-id', // read header `request-id`
   "param": '_requestId', // try getting it from the param `requestId` too
-  "key": '_id' // set the request id as `req._id`
+  "key": '_id', // set the request id as `req._id`
+  "format": 'v4', // one of formats 'v1', 'v4', 'numeric', 'stripe'
+  "setHeader": false // set response X-Request-Id header with generated value
 }
 ```
+
+Formats:
+- 'v1' is a time based uuid format
+- 'v4' is a random uuid format
+- 'numeric' is a number that increasing every request
+- 'stripe' is Stripe objects format like 'req_2cef88e8622a00'
+
 
 ## License
 
