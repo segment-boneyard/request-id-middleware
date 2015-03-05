@@ -60,7 +60,7 @@ function generate (options) {
     var id = req[options.key];
 
     if (id) return next();
-    id = req.param(options.header) || req.get(options.header) || generators[options.format]();
+    id = req.param(options.header) || req.get(options.header) || generators[options.format || 'v4']();
     req[options.key] = id;
 
     if (options.setHeader) {
