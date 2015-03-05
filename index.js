@@ -23,7 +23,8 @@ function generate (options) {
     header: 'request-id',
     param: 'requestId',
     key: '_id',
-    format: 'v4'
+    format: 'v4',
+    setHeader: false
   });
 
   // only for numeric format
@@ -56,11 +57,16 @@ function generate (options) {
   };
 
   return function requestId (req, res, next) {
-    if (req[options.key]) return next();
-    req[options.key] = req.param(options.header) ||
-                       req.get(options.header) ||
-                       generators[options.format]();
-    
+    var id = req[options.key];
+
+    if (id) return next();
+    id = req.param(options.header) || req.get(options.header) || generators[options.format]();
+    req[options.key] = id;
+
+    if (options.setHeader) {
+      res.setHeader('X-Request-Id', id);
+    }
+
     next();
   };
 }
